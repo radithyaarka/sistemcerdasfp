@@ -1,0 +1,492 @@
+/* Base Container */
+/* .container-phone {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #fde2f3 0%, #e0bceb 100%); 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+} */
+
+/* Header Section */
+.header-section {
+    background: linear-gradient(135deg, #ff85a2 0%, #be79df 100%); /* Pink to Purple Gradient */
+    padding: 20px;
+    border-radius: 0 0 25px 25px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.dashboard-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.dashboard-subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.4); /* Slightly more visible border */
+}
+
+/* Body Dashboard */
+.body-dashboard {
+    flex-grow: 1;
+    padding: 0 20px 100px 20px;
+}
+
+/* Status Cards */
+.status-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 25px rgba(190, 121, 223, 0.15); /* Soft purple shadow */
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.status-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(190, 121, 223, 0.2); /* Enhanced purple shadow */
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.card-info {
+    flex: 1;
+}
+
+.card-value {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: #8e24aa; /* Dark Purple */
+}
+
+.card-label {
+    font-size: 14px;
+    color: #ab47bc; /* Medium Purple */
+    margin: 0;
+    font-weight: 500;
+}
+
+.card-status {
+    font-size: 12px;
+    color: #ce93d8; /* Light Purple */
+    margin: 0;
+}
+
+/* Card Color Variants */
+.card-blue .card-icon { /* Temperature */
+    background: linear-gradient(135deg, #f48fb1, #ff85a2); /* Pink shades */
+}
+
+.card-green .card-icon { /* Humidity & Safe Status*/
+    background: linear-gradient(135deg, #ce93d8, #ab47bc); /* Purple shades */
+}
+
+.card-orange .card-icon { /* Connection */
+    background: linear-gradient(135deg, #e1bee7, #ba68c8); /* Light purple shades */
+}
+
+.card-purple .card-icon { /* Time */
+    background: linear-gradient(135deg, #f8bbd0, #ec407a); /* Light to strong pink */
+}
+
+/* New card variant for Danger status */
+.card-red .card-icon {
+    background: linear-gradient(135deg, #f06292, #e91e63);
+}
+
+.card-gradient-blue { /* Not used in your component, but updated for consistency */
+    background: linear-gradient(135deg, #ff85a2 0%, #be79df 100%);
+    color: white;
+}
+
+.card-gradient-blue .card-value,
+.card-gradient-blue .card-label,
+.card-gradient-blue .card-status {
+    color: white;
+}
+
+.card-gradient-blue .card-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Control Cards (Styling from original file, adapted for theme) */
+.control-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(190, 121, 223, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.control-icon {
+    font-size: 24px;
+    color: #be79df; /* Purple */
+}
+
+/* Chart Section */
+.chart-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(190, 121, 223, 0.15); /* Soft purple shadow */
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.chart-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #8e24aa; /* Dark Purple */
+    margin: 0;
+    flex: 1;
+}
+
+.chart-icon {
+    font-size: 20px;
+    color: #be79df; /* Purple */
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+
+/* Connection Panel */
+.connection-input:focus {
+    border-color: #be79df; /* Purple */
+    box-shadow: 0 0 0 3px rgba(190, 121, 223, 0.2); /* Purple glow */
+    outline: none;
+}
+
+.btn-connect {
+    background: linear-gradient(135deg, #ff85a2, #be79df); /* Pink to Purple */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-connect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(190, 121, 223, 0.3); /* Purple shadow */
+}
+
+/* Bottom Navigation */
+.navbar {
+    background: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 720px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 0 -5px 25px rgba(190, 121, 223, 0.15); /* Soft purple shadow */
+    z-index: 1000;
+    display: flex;
+    padding: 15px 0;
+}
+
+.col-navbar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ce93d8; /* Light Purple */
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 12px;
+    min-width: 80px;
+}
+
+.nav-link:hover {
+    color: #ec407a; /* Strong Pink */
+    background: rgba(236, 64, 122, 0.08);
+}
+
+.nav-link.active {
+    color: #ec407a; /* Strong Pink */
+    background: rgba(236, 64, 122, 0.08);
+}
+
+.nav-link i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.nav-link p {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Sisa dari file CSS tetap sama, jadi saya tidak akan menempelkannya lagi untuk keringkasan. Cukup salin dan tempel bagian di atas untuk menimpa gaya yang ada di file Anda. */
+/* ... (sisa dari CSS Anda, seperti .responsive, .utility, .row, .form, .animation, dll. tetap tidak berubah) ... */
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .header-section {
+        padding: 15px;
+    }
+    
+    .body-dashboard {
+        padding: 0 15px 100px 15px;
+    }
+    
+    .dashboard-title {
+        font-size: 24px;
+    }
+    
+    .card-value {
+        font-size: 20px;
+    }
+    
+    .control-buttons {
+        flex-direction: column;
+    }
+    
+    .control-btn {
+        padding: 15px;
+    }
+}
+
+/* Utility Classes */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.me-2 {
+    margin-right: 0.5rem;
+}
+
+.me-3 {
+    margin-right: 1rem;
+}
+
+.ms-2 {
+    margin-left: 0.5rem;
+}
+
+/* Row and Column System */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+
+.col,
+.col-6,
+.col-12 {
+    position: relative;
+    width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+/* Form Controls */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status-card,
+.control-card,
+.chart-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.status-card:nth-child(1) { animation-delay: 0.1s; }
+.status-card:nth-child(2) { animation-delay: 0.2s; }
+.status-card:nth-child(3) { animation-delay: 0.3s; }
+.status-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Loading Animation for Connection */
+.loading-dots::after {
+    content: '';
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+    100% { content: ''; }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+    .container-phone {
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        color: #e2e8f0;
+    }
+    
+    .status-card,
+    .control-card,
+    .chart-card {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+    
+    .navbar {
+        background: #2d3748;
+    }
+    
+    .card-value {
+        color: #e2e8f0;
+    }
+    
+    .form-control {
+        background-color: #4a5568;
+        border-color: #718096;
+        color: #e2e8f0;
+    }
+}
