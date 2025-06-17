@@ -31,3 +31,5 @@ temp/
 
 # Optional: IDE settings (misal kamu pakai VSCode)
 .vscode/
+
+serviceAccountKey.json
