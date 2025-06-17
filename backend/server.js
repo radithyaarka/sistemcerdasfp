@@ -28,19 +28,16 @@ client.on('connect', () => {
     });
 });
 
-// --- LOGIKA UTAMA: MENERIMA DAN MENYIMPAN DATA KE FIRESTORE ---
 client.on('message', async (topic, message) => {
     if (topic === mqttTopic) {
         try {
             const data = JSON.parse(message.toString());
             console.log('Received data:', data);
 
-            // Tambahkan data ke koleksi 'data_points' di Firestore
-            // Firestore akan otomatis membuat koleksi jika belum ada
             const res = await db.collection('data_points').add({
-                temperature: data.temperature,
-                humidity: data.humidity,
-                lamp_status: data.lamp_status,
+                temperature: data.temperature, 
+                smoke_level: data.smoke_level,                 
+                danger_status: data.danger_status,   
                 // Gunakan timestamp dari server Firebase untuk akurasi
                 timestamp: admin.firestore.FieldValue.serverTimestamp()
             });
