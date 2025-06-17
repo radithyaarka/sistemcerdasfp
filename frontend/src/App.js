@@ -1,15 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// App.js - Versi dengan Router (Direkomendasikan)
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MonitorPage from './pages/MonitorPage';
-import { MqttProvider } from './mqtt/MqttProvider';
 
-export default function App() {
-    return (
-        <MqttProvider>
-            <Router>
-                    <Routes>
-                        <Route path="/" element={<MonitorPage />} />
-                    </Routes>
-            </Router>
-        </MqttProvider>
-    );
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MonitorPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;
