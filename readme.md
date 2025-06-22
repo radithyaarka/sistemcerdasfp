@@ -18,4 +18,5 @@ Jika sudah jalankan `server.js` menggunakan `node server.js` pada terimnal backe
 Import firebaseConfig pada dashboard firebase dan masukkan pada directory /frontend\
 Jika sudah jalankan `npm run dev` pada terminal frontend.
 
-## Fuzzy Logic ~
+## Fuzzy Logic 
+![image](https://github.com/user-attachments/assets/1b61850b-75df-4009-a20d-9466d24b3237)
